@@ -9,6 +9,15 @@ import java.util.stream.IntStream;
 
 public class BookOperations {
 
+    private static BookOperations instance = null;
+    private BookOperations() {}
+    public static BookOperations getInstance() {
+        if (instance == null) {
+            instance = new BookOperations();
+        }
+        return instance;
+    }
+
     private Map<Integer, Book> booksMap;
     protected void setBooksMap(Map<Integer, Book> booksMap) {
         this.booksMap = booksMap;

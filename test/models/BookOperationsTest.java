@@ -13,7 +13,7 @@ import static org.hamcrest.Matchers.*;
 
 public class BookOperationsTest {
 
-    private BookOperations bookOperations = new BookOperations();
+    private BookOperations bookOperations = BookOperations.getInstance();
     private final Book book1 = new Book(1, "image1", "title1", "author1", 1.11, "/api/v1/books/1");
     private final Book book2 = new Book(2, "image2", "title2", "author1", 2.22, "/api/v1/books/2");
     private final Book unsavedBook = new Book(123, "myImage", "myTitle", "me, myself and I", 123.45, "google.com");
@@ -24,6 +24,12 @@ public class BookOperationsTest {
         booksMap.put(2, book2);
         booksMap.put(1, book1);
         bookOperations.setBooksMap(booksMap);
+    }
+
+    @Test
+    public void getInstanceReturnsAlreadyInstantiatedClass() {
+        BookOperations anotherInstance = BookOperations.getInstance();
+        assertThat(bookOperations, is(equalTo(anotherInstance)));
     }
 
     @Test

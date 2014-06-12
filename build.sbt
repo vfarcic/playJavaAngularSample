@@ -11,5 +11,6 @@ libraryDependencies ++= Seq(
   javaEbean,
   cache,
   javaWs,
-  "org.hamcrest" % "hamcrest-all" % "1.3"
+  "org.hamcrest" % "hamcrest-all" % "1.3",
+  "com.typesafe.akka" % "akka-testkit_2.11" % "2.3.3"
 )

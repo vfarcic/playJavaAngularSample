@@ -50,6 +50,8 @@ public class Book {
         this.link = link;
     }
 
+    public Book() {}
+
     public Book(int id, String image, String title, String author, double price, String link) {
         this.setId(id);
         this.setImage(image);
